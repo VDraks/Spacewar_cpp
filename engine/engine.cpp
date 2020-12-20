@@ -11,20 +11,23 @@ Engine::Engine():
 void Engine::run() {
     std::cout << "engine run" << std::endl;
 
-    while (!_inputController.isClose()) {
+    float lastTime = SDL_GetTicks();
 
-        float dt = 1000.f / 60;
+    while (!_inputController.isClose()) {
+        float nowTime = SDL_GetTicks();
+        float deltaTime = (nowTime - lastTime) / 1000.f;
+        lastTime = nowTime;
 
         _inputController.readInput();
 
         for (const auto& system : _systems) {
-            system->update(dt, _world.entityManager());
+            system->update(deltaTime, _world.entityManager());
         }
 
         _view.render();
 
-        // calculates to 60 fps
-        SDL_Delay(1000 / 60);
+//        // calculates to 60 fps
+//        SDL_Delay(1000 / 60);
     }
 }
 

@@ -44,7 +44,7 @@ MainView::MainView(const model::World& world):
     _win = SDL_CreateWindow("Spacewar",
                             SDL_WINDOWPOS_CENTERED,
                             SDL_WINDOWPOS_CENTERED,
-                            1000, 1000, 0);
+                            _world.worldSize().x, _world.worldSize().y, 0);
 
     Uint32 render_flags = SDL_RENDERER_ACCELERATED;
 
