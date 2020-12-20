@@ -1,73 +1,69 @@
 #include "main_view.h"
 
-#include "world.h"
-
-#include <vector>
-
 #include <SDL2/SDL.h>
 #include <iostream>
-//#include <SDL2/SDL_image.h>
+#include <cmath>
 
-class Point {
-public:
-    Point() = default;
-    Point(int x, int y) { this->x = x; this->y = y; };
-    int x, y;
-};
+#include "model/components/transform.h"
+#include "model/components/shape.h"
+#include "model/world.h"
 
-void DrawFilledPolygon(const std::vector<Point>& vertices, const SDL_Color& color, SDL_Renderer* renderer, const Point& offset) {
+void DrawShape(const model::component::Shape& shape, const SDL_Color& color, SDL_Renderer* renderer, const model::component::Transform& transform) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 
-    std::cout << "x: " << offset.x << ", y: " << offset.y << std::endl;
+    const auto applyTransform = [](const model::Point& point, const model::component::Transform& transform) {
+        const float x = point.x * std::cos(transform.angle) - point.y * std::sin(transform.angle) + transform.position.x;
+        const float y = point.y * std::cos(transform.angle) + point.x * std::sin(transform.angle) + transform.position.y;
+        return model::Point { x, y };
+    };
 
-    for (int i = 0; i < vertices.size() - 1; ++i) {
-        SDL_RenderDrawLine(renderer,
-                           vertices[i].x + offset.x, vertices[i].y + offset.y,
-                           vertices[i + 1].x + offset.x, vertices[i + 1].y + offset.y);
+    const auto drawLine = [renderer, &transform, applyTransform](const model::Point& start, const model::Point& end) {
+        const auto newStart = applyTransform(start, transform);
+        const auto newEnd = applyTransform(end, transform);
+        SDL_RenderDrawLine(renderer, newStart.x, newStart.y, newEnd.x, newEnd.y);
+    };
+
+    for (int i = 0; i < shape.points.size() - 1; ++i) {
+        drawLine(shape.points[i], shape.points[i + 1]);
     }
+    drawLine(shape.points.back(), shape.points[0]);
+
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 }
 
-MainView::MainView(const World& world):
+MainView::MainView(const model::World& world):
     _world(world) {
 
-    std::cout << "MainView()" << std::endl;
     // retutns zero on success else non-zero
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
 //        printf("error initializing SDL: %s\n", SDL_GetError());
     }
-    win = SDL_CreateWindow("GAME", // creates a window
-                                       SDL_WINDOWPOS_CENTERED,
-                                       SDL_WINDOWPOS_CENTERED,
-                                       1000, 1000, 0);
+    _win = SDL_CreateWindow("Spacewar",
+                            SDL_WINDOWPOS_CENTERED,
+                            SDL_WINDOWPOS_CENTERED,
+                            1000, 1000, 0);
 
-    // triggers the program that controls
-    // your graphics hardware and sets flags
     Uint32 render_flags = SDL_RENDERER_ACCELERATED;
 
-    // creates a renderer to render our images
-    rend = SDL_CreateRenderer(win, -1, render_flags);
+    _rend = SDL_CreateRenderer(_win, -1, render_flags);
 }
 
 MainView::~MainView() {
-    // destroy renderer
-    SDL_DestroyRenderer(rend);
-
-    // destroy window
-    SDL_DestroyWindow(win);
+    SDL_DestroyRenderer(_rend);
+    SDL_DestroyWindow(_win);
 }
 
 void MainView::render() {
-    SDL_SetRenderDrawColor(rend, 0, 0, 255, 255);
+    SDL_SetRenderDrawColor(_rend, 0, 0, 255, 255);
 
-    // clears the screen
-    SDL_RenderClear(rend);
+    SDL_RenderClear(_rend);
 
-    DrawFilledPolygon({Point(0, 0), Point(50, 0), Point(50, 50), Point(0, 50)},
-                      SDL_Color{0, 255, 0, 255}, rend, Point(_world.gameObject.x, _world.gameObject.y));
+    const auto& shapes = _world.entityManager().getEntitySet<model::component::Transform, model::component::Shape>();
+    for (const auto& [entity, components] : shapes) {
+        const auto& [transform, shape] = components;
+        DrawShape(shape, SDL_Color{0, 255, 0, 255}, _rend, transform);
+    }
 
-    // triggers the double buffers
-    // for multiple rendering
-    SDL_RenderPresent(rend);
+    SDL_RenderPresent(_rend);
 }
