@@ -1,10 +1,13 @@
 #include "game.h"
 
+#include "collider_layer.h"
+#include "game/components/collider.h"
 #include "game/components/player.h"
 #include "game/components/rigid_body.h"
 #include "game/systems/bullet_controller_system.h"
 #include "game/systems/physics/apply_forces_system.h"
 #include "game/systems/physics/calculate_forces_system.h"
+#include "game/systems/physics/collision_system.h"
 #include "game/components/star.h"
 #include "model/components/shape.h"
 #include "model/components/transform.h"
@@ -12,19 +15,29 @@
 
 namespace game {
 
+using namespace model::component;
+
 namespace {
 
-void addPlayer(Engine& engine, const component::Player& playerState) {
+constexpr float startOffset = 80.f;
+
+void addPlayer(Engine& engine, const component::Player& playerState, const Transform& transform) {
     auto& entityManager = engine.world().entityManager();
     const auto& ship = entityManager.createEntity();
-    entityManager.addComponent<model::component::Transform>(ship);
-    auto& player = entityManager.addComponent<component::Player>(ship);
-    player = playerState;
 
-    auto& firstShipShape = entityManager.addComponent<model::component::Shape>(ship);
-    firstShipShape.points = { {-10.f, 10.f }, {-10.f, -10.f }, {20.f, 0.f } };
+    entityManager.addComponent<model::component::Transform>(ship) = transform;
+    entityManager.addComponent<component::Player>(ship) = playerState;
 
-    entityManager.addComponent<component::RigidBody>(ship);
+    auto& shape = entityManager.addComponent<model::component::Shape>(ship);
+    shape.points = {{-10.f, 10.f},
+                    {-10.f, -10.f},
+                    {20.f,  0.f}};
+
+    entityManager.addComponent<component::RigidBody>(ship).mass = 5.f;
+
+    auto& collider = entityManager.addComponent<component::Collider>(ship);
+    collider.radius = 10.f;
+    collider.layer = playerState.layer;
 }
 
 void initStar(Engine& engine) {
@@ -38,6 +51,10 @@ void initStar(Engine& engine) {
                      {0.f, -20.f }, {-5.f, -5.f }, {-20.f, 0.f }, {-5.f,  5.f } };
 
     entityManager.addComponent<component::Star>(star);
+
+    auto& collider = entityManager.addComponent<component::Collider>(star);
+    collider.radius = 20.f;
+    collider.layer = static_cast<int>(ColliderLayer::Star);
 }
 
 } // namespace
@@ -49,21 +66,33 @@ Game::Game() {
     firstPlayer.leftKey = SDL_SCANCODE_A;
     firstPlayer.fireKey = SDL_SCANCODE_W;
     firstPlayer.thrustKey = SDL_SCANCODE_S;
+    firstPlayer.layer = static_cast<int>(ColliderLayer::FirstPlayer) ;
+
+    Transform firstPlayerTransform;
+    firstPlayerTransform.position = math::Vec2 { startOffset, _engine.world().worldSize().y - startOffset };
+    firstPlayerTransform.angle = -M_PI_4;
 
     component::Player secondPlayer;
     secondPlayer.rightKey = SDL_SCANCODE_RIGHT;
     secondPlayer.leftKey = SDL_SCANCODE_LEFT;
     secondPlayer.fireKey = SDL_SCANCODE_UP;
     secondPlayer.thrustKey = SDL_SCANCODE_DOWN;
+    firstPlayer.layer = static_cast<int>(ColliderLayer::SecondPlayer) ;
 
-    addPlayer(_engine, firstPlayer);
-    addPlayer(_engine, secondPlayer);
+    Transform secondPlayerTransform;
+    secondPlayerTransform.position = math::Vec2 { _engine.world().worldSize().x - startOffset, startOffset };
+    secondPlayerTransform.angle = M_PI_4 + M_PI_2;
+
+
+    addPlayer(_engine, firstPlayer, firstPlayerTransform);
+    addPlayer(_engine, secondPlayer, secondPlayerTransform);
 
     initStar(_engine);
 
     _engine.addSystem<system::PlayerControllerSystem>(_engine.inputController());
     _engine.addSystem<system::CalculateForcesSystem>();
     _engine.addSystem<system::ApplyForcesSystem>();
+    _engine.addSystem<system::CollisionSystem>();
     _engine.addSystem<system::BulletControllerSystem>();
 }
 
