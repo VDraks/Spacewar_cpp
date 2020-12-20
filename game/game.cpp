@@ -8,6 +8,7 @@
 #include "game/systems/physics/apply_forces_system.h"
 #include "game/systems/physics/calculate_forces_system.h"
 #include "game/systems/physics/collision_system.h"
+#include "game/systems/world_boundary_system.h"
 #include "game/components/star.h"
 #include "model/components/shape.h"
 #include "model/components/transform.h"
@@ -94,6 +95,7 @@ Game::Game() {
     _engine.addSystem<system::ApplyForcesSystem>();
     _engine.addSystem<system::CollisionSystem>();
     _engine.addSystem<system::BulletControllerSystem>();
+    _engine.addSystem<system::WorldBoundarySystem>(_engine.world());
 }
 
 void Game::run() {
