@@ -1,10 +1,10 @@
 #pragma once
 
-namespace model {
+namespace math {
 
 struct Point {
     float x = 0.f;
     float y = 0.f;
 };
 
-} // namespace model
+} // namespace math

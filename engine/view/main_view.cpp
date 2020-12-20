@@ -11,13 +11,15 @@
 void DrawShape(const model::component::Shape& shape, const SDL_Color& color, SDL_Renderer* renderer, const model::component::Transform& transform) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 
-    const auto applyTransform = [](const model::Point& point, const model::component::Transform& transform) {
-        const float x = point.x * std::cos(transform.angle) - point.y * std::sin(transform.angle) + transform.position.x;
-        const float y = point.y * std::cos(transform.angle) + point.x * std::sin(transform.angle) + transform.position.y;
-        return model::Point { x, y };
+    const auto applyTransform = [](const math::Point& point, const model::component::Transform& transform) {
+        const float x =
+                point.x * std::cos(transform.angle) - point.y * std::sin(transform.angle) + transform.position.x;
+        const float y =
+                point.y * std::cos(transform.angle) + point.x * std::sin(transform.angle) + transform.position.y;
+        return math::Point{x, y};
     };
 
-    const auto drawLine = [renderer, &transform, applyTransform](const model::Point& start, const model::Point& end) {
+    const auto drawLine = [renderer, &transform, applyTransform](const math::Point& start, const math::Point& end) {
         const auto newStart = applyTransform(start, transform);
         const auto newEnd = applyTransform(end, transform);
         SDL_RenderDrawLine(renderer, newStart.x, newStart.y, newEnd.x, newEnd.y);
