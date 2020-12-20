@@ -1,12 +1,11 @@
 #include <iostream>
 
-#include "engine/engine.h"
+#include "game/game.h"
 
 int main(int argc, char *argv[]) {
     std::cout << "main()" << std::endl;
-    Engine engine;
-    std::cout << "main2()" << std::endl;
-    engine.run();
-    std::cout << "Hello, World!" << std::endl;
+    game::Game game;
+    game.run();
+    std::cout << "finished()" << std::endl;
     return 0;
 }
