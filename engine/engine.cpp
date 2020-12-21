@@ -1,7 +1,7 @@
 #include "engine.h"
 
 #include <iostream>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 Engine::Engine():
     _view(_world) {

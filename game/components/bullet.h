@@ -8,7 +8,7 @@ namespace game::component {
 struct Bullet : public ecs::Component<Bullet> {
     math::Vec2 velocity;
 
-    inline static constexpr float lifeTime = 10.f;
+    inline static constexpr float lifeTime = 6.f;
     float currentLifeTime = 0.f;
 };
 

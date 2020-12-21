@@ -6,4 +6,4 @@ add_subdirectory(view)
 add_subdirectory(controller)
 
 add_library(Engine engine.cpp)
-target_link_libraries(Engine Model View Controller)
+target_link_libraries(Engine Model View Controller SDL2::Main)

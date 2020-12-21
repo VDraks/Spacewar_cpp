@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.7)
 project(Spacewar)
 
+# Add SDL2 CMake modules
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
+
 set(CMAKE_CXX_STANDARD 17)
 
 message("PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})

@@ -6,7 +6,7 @@
 namespace game::component {
 
 struct RigidBody : public ecs::Component<RigidBody> {
-    float mass = 10.f;
+    float mass = 1.f;
     math::Vec2 force;
     math::Vec2 velocity;
 };

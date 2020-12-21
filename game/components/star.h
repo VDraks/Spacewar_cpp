@@ -6,7 +6,7 @@
 namespace game::component {
 
 struct Star : public ecs::Component<Star> {
-    float mass = 1000000.f;
+    float mass = 3000000.f;
 };
 
 } // namespace game::component

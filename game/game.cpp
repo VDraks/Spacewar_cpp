@@ -34,7 +34,7 @@ void addPlayer(Engine& engine, const component::Player& playerState, const Trans
                     {-10.f, -10.f},
                     {20.f,  0.f}};
 
-    entityManager.addComponent<component::RigidBody>(ship).mass = 5.f;
+    entityManager.addComponent<component::RigidBody>(ship).mass = 3.0f;
 
     auto& collider = entityManager.addComponent<component::Collider>(ship);
     collider.radius = 10.f;

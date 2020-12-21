@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SDL2/SDL.h>
+#include <memory>
 
 namespace model {
 class World;
@@ -14,10 +14,8 @@ public:
     void render();
 
 private:
-    const model::World& _world;
-
-    SDL_Window* _win = nullptr;
-    SDL_Renderer* _rend = nullptr;
+    struct Impl;
+    std::unique_ptr<Impl> _d;
 };
 
 

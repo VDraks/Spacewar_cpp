@@ -17,9 +17,9 @@ using namespace model::component;
 
 namespace {
 
-constexpr float shipAngleSpeed = M_PI;
-constexpr float shipForce = 80;
-constexpr float bulletSpeed = 100;
+constexpr float shipAngleSpeed = M_PI_4;
+constexpr float shipForce = 50;
+constexpr float bulletSpeed = 70;
 
 void spawnBullet(ecs::EntityManager& entityManager, const Transform& transform, const component::RigidBody& rb, const int layer) {
     const auto& entity = entityManager.createEntity();
