@@ -15,14 +15,14 @@ class EntitySet;
 class BaseEntitySet {
 public:
     static std::size_t getEntitySetCount() {
-        return sFactories.size();
+        return sFactories().size();
     }
 
     static std::unique_ptr<BaseEntitySet> createEntitySet(std::size_t type,
                                                           EntityContainer& entities,
                                                           const std::vector<std::unique_ptr<BaseComponentContainer>>& componentContainers,
                                                           std::vector<std::vector<BaseEntitySet *>>& componentToEntitySets) {
-        return sFactories[type](entities, componentContainers, componentToEntitySets);
+        return sFactories()[type](entities, componentContainers, componentToEntitySets);
     }
 
     BaseEntitySet() = default;
@@ -56,7 +56,7 @@ protected:
 
     template<typename ...Ts>
     static EntitySetType generateEntitySetType() {
-        sFactories.push_back([](EntityContainer& entities,
+        sFactories().push_back([](EntityContainer& entities,
                                 const std::vector<std::unique_ptr<BaseComponentContainer>>& componentContainers,
                                 std::vector<std::vector<BaseEntitySet *>>& componentToEntitySets)
                                      -> std::unique_ptr<BaseEntitySet> {
@@ -66,7 +66,7 @@ protected:
             (componentToEntitySets[Ts::Type].push_back(entitySet.get()), ...);
             return std::move(entitySet);
         });
-        return sFactories.size() - 1;
+        return sFactories().size() - 1;
     }
 
 private:
@@ -75,10 +75,11 @@ private:
             const std::vector<std::unique_ptr<BaseComponentContainer>>&,
             std::vector<std::vector<BaseEntitySet *>>&);
 
-    static std::vector<EntitySetFactory> sFactories;
+    static std::vector<EntitySetFactory>& sFactories() {
+        static std::vector<EntitySetFactory> instance;
+        return instance;
+    };
 };
-
-inline std::vector<BaseEntitySet::EntitySetFactory> BaseEntitySet::sFactories;
 
 template<typename ...Ts>
 class EntitySet : public BaseEntitySet {
@@ -160,10 +161,7 @@ protected:
         for (const auto& listener : _entityRemovedListeners.getObjects())
             listener(entity);
         auto it = _entityToIndex.find(entity);
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wnull-dereference"
         auto index = it->second;
-#pragma GCC diagnostic pop
         _entityToIndex[_managedEntities.back().first] = index;
         _entityToIndex.erase(it);
         _managedEntities[index] = _managedEntities.back();

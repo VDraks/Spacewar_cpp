@@ -9,29 +9,30 @@ namespace ecs {
 class BaseComponent {
 public:
     static std::size_t getComponentCount() {
-        return sFactories.size();
+        return sFactories().size();
     }
 
     static std::unique_ptr<BaseComponentContainer> createComponentContainer(std::size_t type) {
-        return sFactories[type]();
+        return sFactories()[type]();
     }
 
 protected:
     template<typename T>
     constexpr static ComponentType generateComponentType() {
-        sFactories.push_back([]() -> std::unique_ptr<BaseComponentContainer> {
+        sFactories().push_back([]() -> std::unique_ptr<BaseComponentContainer> {
             return std::make_unique<ComponentContainer<T>>();
         });
-        return static_cast<ComponentType>(sFactories.size() - 1);
+        return static_cast<ComponentType>(sFactories().size() - 1);
     }
 
 private:
     using ComponentContainerFactory = std::unique_ptr<BaseComponentContainer>(*)();
 
-    static std::vector<ComponentContainerFactory> sFactories;
+    static std::vector<ComponentContainerFactory>& sFactories() {
+        static std::vector<ComponentContainerFactory> instance;
+        return instance;
+    };
 };
-
-inline std::vector<BaseComponent::ComponentContainerFactory> BaseComponent::sFactories;
 
 template<typename T>
 class Component : public BaseComponent {

@@ -29,10 +29,7 @@ public:
 
     template<typename T>
     ComponentId getComponent() const {
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wnull-dereference"
         return findComponent<T>()->second;
-#pragma GCC diagnostic pop
     }
 
     const ComponentIdContainer& getComponents() const {
