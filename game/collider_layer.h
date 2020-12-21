@@ -3,9 +3,9 @@
 namespace game {
 
 enum class ColliderLayer {
-    Star,
-    FirstPlayer,
-    SecondPlayer
+    FirstPlayer = 0,
+    SecondPlayer = 1,
+    Star
 };
 
 } // namespace game

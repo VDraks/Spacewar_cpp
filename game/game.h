@@ -1,6 +1,7 @@
 #pragma once
 
 #include "engine.h"
+#include "game_controller.h"
 
 namespace game {
 
@@ -12,6 +13,7 @@ public:
 
 private:
     Engine _engine;
+    GameController _gameController;
 };
 
 } // namespace game
