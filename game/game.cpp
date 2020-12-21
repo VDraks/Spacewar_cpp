@@ -71,7 +71,7 @@ Game::Game() {
 
     Transform firstPlayerTransform;
     firstPlayerTransform.position = math::Vec2 { startOffset, _engine.world().worldSize().y - startOffset };
-    firstPlayerTransform.angle = -M_PI_4;
+    firstPlayerTransform.angle = -(M_PI / 4);
 
     component::Player secondPlayer;
     secondPlayer.rightKey = SDL_SCANCODE_RIGHT;
@@ -82,7 +82,7 @@ Game::Game() {
 
     Transform secondPlayerTransform;
     secondPlayerTransform.position = math::Vec2 { _engine.world().worldSize().x - startOffset, startOffset };
-    secondPlayerTransform.angle = M_PI_4 + M_PI_2;
+    secondPlayerTransform.angle = M_PI / 4 + M_PI / 2;
 
 
     addPlayer(_engine, firstPlayer, firstPlayerTransform);
