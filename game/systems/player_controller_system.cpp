@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <random>
 
 #include "game/game_config.h"
 #include "game/components/bullet.h"
@@ -22,6 +23,8 @@ namespace {
 constexpr float shipAngleSpeed = M_PI / 4;
 constexpr float shipForce = 50;
 constexpr float bulletSpeed = 70;
+
+std::random_device randomDevice;
 
 void spawnBullet(ecs::EntityManager& entityManager, const Transform& transform, const component::RigidBody& rb, const int layer) {
     const auto& entity = entityManager.createEntity();
@@ -59,8 +62,9 @@ void spawnFuelParticle(ecs::EntityManager& entityManager, const model::component
 
 } // namespace
 
-PlayerControllerSystem::PlayerControllerSystem(const controller::InputController& inputController):
-    _inputController(inputController) {
+PlayerControllerSystem::PlayerControllerSystem(const controller::InputController& inputController,
+                                               const model::World& world) :
+        _inputController(inputController), _world(world) {
 
 }
 
@@ -79,12 +83,12 @@ void PlayerControllerSystem::update(float dt, ecs::EntityManager& entityManager)
         }
 
         if (_inputController.isPressed(player.fireKey)) {
-            if (player.bulletCount > 0 && player.lastBulletTime > component::Player::bulletTimeout) {
+            if (player.bulletCount > 0 && player.bulletCooldownTime > component::Player::bulletTimeout) {
                 player.bulletCount--;
                 spawners.emplace_back([t = transform, rb = rb, l = player.layer, &entityManager]() {
                     spawnBullet(entityManager, t, rb, l);
                 });
-                player.lastBulletTime = 0;
+                player.bulletCooldownTime = 0;
             }
         }
 
@@ -93,17 +97,28 @@ void PlayerControllerSystem::update(float dt, ecs::EntityManager& entityManager)
                 player.fuelValue -= dt;
                 rb.force = rb.force + math::Utils::angleVector(transform.angle) * shipForce;
 
-                if (player.lastFuelParticleTime > component::Player::fuelParticleTimeout) {
+                if (player.fuelParticleCooldownTime > component::Player::fuelParticleTimeout) {
                     spawners.emplace_back([t = transform, &entityManager]() {
                         spawnFuelParticle(entityManager, t);
                     });
-                    player.lastFuelParticleTime = 0;
+                    player.fuelParticleCooldownTime = 0;
                 }
             }
         }
 
-        player.lastBulletTime += dt;
-        player.lastFuelParticleTime += dt;
+        if (_inputController.isPressed(player.teleportationKey)) {
+            if (player.teleportationCooldownTime > component::Player::teleportationTimeout) {
+                std::uniform_real_distribution<float> distX(0, _world.worldSize().x);
+                std::uniform_real_distribution<float> distY(0, _world.worldSize().y);
+                transform.position.x = distX(randomDevice);
+                transform.position.y = distY(randomDevice);
+                player.teleportationCooldownTime = 0;
+            }
+        }
+
+        player.bulletCooldownTime += dt;
+        player.fuelParticleCooldownTime += dt;
+        player.teleportationCooldownTime += dt;
     }
 
     for (const auto& spawner : spawners) spawner();

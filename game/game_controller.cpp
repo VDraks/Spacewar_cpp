@@ -124,6 +124,7 @@ void GameController::startMatch() {
     firstPlayer.leftKey = SDL_SCANCODE_A;
     firstPlayer.fireKey = SDL_SCANCODE_W;
     firstPlayer.thrustKey = SDL_SCANCODE_S;
+    firstPlayer.teleportationKey = SDL_SCANCODE_Q;
     firstPlayer.layer = static_cast<int>(ColliderLayer::FirstPlayer) ;
 
     Transform firstPlayerTransform;
@@ -135,6 +136,7 @@ void GameController::startMatch() {
     secondPlayer.leftKey = SDL_SCANCODE_LEFT;
     secondPlayer.fireKey = SDL_SCANCODE_UP;
     secondPlayer.thrustKey = SDL_SCANCODE_DOWN;
+    secondPlayer.teleportationKey = SDL_SCANCODE_KP_ENTER;
     secondPlayer.layer = static_cast<int>(ColliderLayer::SecondPlayer) ;
 
     Transform secondPlayerTransform;

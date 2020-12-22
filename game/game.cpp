@@ -16,7 +16,7 @@ Game::Game():
 
     _gameController.startGame();
 
-    _engine.addSystem<system::PlayerControllerSystem>(_engine.inputController());
+    _engine.addSystem<system::PlayerControllerSystem>(_engine.inputController(), _engine.world());
     _engine.addSystem<system::CalculateForcesSystem>();
     _engine.addSystem<system::ApplyForcesSystem>();
     _engine.addSystem<system::CollisionSystem>();
