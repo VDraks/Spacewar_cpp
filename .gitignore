@@ -25,3 +25,6 @@
 *.exe
 *.out
 *.app
+
+#Visual studio
+.vs/
