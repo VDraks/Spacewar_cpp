@@ -16,6 +16,9 @@ struct Player : public ecs::Component<Player> {
     float lastBulletTime = bulletTimeout;
 
     int layer = -1;
+
+    inline static constexpr float fuelParticleTimeout = 0.01f;
+    float lastFuelParticleTime = fuelParticleTimeout;
 };
 
 } // namespace game::component

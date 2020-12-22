@@ -2,12 +2,13 @@
 
 #include <cmath>
 #include <iostream>
-#include <game/components/collider.h>
 
 #include "game/components/bullet.h"
+#include "game/components/collider.h"
 #include "game/components/player.h"
 #include "game/components/rigid_body.h"
 #include "math/utils.h"
+#include "model/components/particle_system.h"
 #include "model/components/shape.h"
 #include "model/components/transform.h"
 
@@ -37,6 +38,20 @@ void spawnBullet(ecs::EntityManager& entityManager, const Transform& transform, 
     auto& collider = entityManager.addComponent<component::Collider>(entity);
     collider.radius = 1.f;
     collider.layer = layer;
+}
+
+void spawnFuelParticle(ecs::EntityManager& entityManager, const model::component::Transform& transform) {
+    const auto entity = entityManager.createEntity();
+
+    auto& particle = entityManager.addComponent<model::component::ParticleSystem>(entity);
+    particle.settings.amount = 10;
+    particle.settings.duration = 2.f;
+    particle.shapeSettings.scaleStart = 0.01f;
+    particle.shapeSettings.scaleEnd = 1.f;
+    particle.shapeSettings.radius = 3.f;
+    particle.shapeSettings.offset.x = -10.f;
+
+    entityManager.addComponent<model::component::Transform>(entity) = transform;
 }
 
 } // namespace
@@ -69,11 +84,19 @@ void PlayerControllerSystem::update(float dt, ecs::EntityManager& entityManager)
             }
         }
 
-        player.lastBulletTime += dt;
-
         if (_inputController.isPressed(player.thrustKey)) {
             rb.force = rb.force + math::Utils::angleVector(transform.angle) * shipForce;
+
+            if (player.lastFuelParticleTime > component::Player::fuelParticleTimeout) {
+                spawners.emplace_back([t = transform, &entityManager]() {
+                    spawnFuelParticle(entityManager, t);
+                });
+                player.lastFuelParticleTime = 0;
+            }
         }
+
+        player.lastBulletTime += dt;
+        player.lastFuelParticleTime += dt;
     }
 
     for (const auto& spawner : spawners) spawner();
