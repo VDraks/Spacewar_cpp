@@ -22,9 +22,16 @@ public:
 
     void addSystem(std::unique_ptr<ecs::System>&& system);
 
+    template<typename T, typename ...Args>
+    void addVisualiser(Args&&... args) {
+        addVisualiser(std::make_unique<T>(std::forward<Args>(args)...));
+    }
+
+    void addVisualiser(std::unique_ptr<view::IVisualiser>&& visualiser);
+
 private:
     model::World _world;
-    MainView _view;
+    view::MainView _view;
     controller::InputController _inputController;
 
     std::vector<std::unique_ptr<ecs::System>> _systems;

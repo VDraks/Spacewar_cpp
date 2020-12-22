@@ -1,7 +1,6 @@
 #include "engine.h"
 
 #include <iostream>
-#include <SDL.h>
 
 Engine::Engine():
     _view(_world) {
@@ -9,8 +8,6 @@ Engine::Engine():
 }
 
 void Engine::run() {
-    std::cout << "engine run" << std::endl;
-
     float lastTime = SDL_GetTicks();
 
     while (!_inputController.isClose()) {
@@ -25,12 +22,13 @@ void Engine::run() {
         }
 
         _view.render();
-
-//        // calculates to 60 fps
-//        SDL_Delay(1000 / 60);
     }
 }
 
 void Engine::addSystem(std::unique_ptr<ecs::System>&& system) {
     _systems.push_back(std::move(system));
+}
+
+void Engine::addVisualiser(std::unique_ptr<view::IVisualiser>&& visualiser) {
+    _view.addVisualiser(std::move(visualiser));
 }

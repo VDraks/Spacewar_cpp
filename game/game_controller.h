@@ -20,6 +20,7 @@ public:
 
     [[nodiscard]] const std::array<int, 2>& playerScores() const { return _playerScores; }
 
+    [[nodiscard]] const model::World& world() const { return _engine.world(); }
 
 private:
     Engine& _engine;
