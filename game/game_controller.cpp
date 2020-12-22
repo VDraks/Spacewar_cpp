@@ -18,22 +18,32 @@ namespace {
 
 constexpr float playerStartOffset = 80.f;
 
-ecs::Entity addPlayer(Engine& engine, const component::Player& playerState, const Transform& transform) {
+const std::vector<math::Vec2> firstShapePoints {
+        {-12.f, 10.f},
+        {-10.f, -10.f},
+        {20.f,  0.f}
+};
+
+const std::vector<math::Vec2> secondShapePoints {
+        {-10.f, 8.f}, {-2.f, 8.f}, {-2.f, 4.f},
+        {16.f, 4.f}, {20.f, 0.f}, {16.f, -4.f},
+        {-2.f, -4.f}, {-2.f, -8.f}, {-10.f, -8.f}
+};
+
+ecs::Entity addPlayer(Engine& engine, const component::Player& playerState,
+                      const Transform& transform, const std::vector<math::Vec2>& shape) {
     auto& entityManager = engine.world().entityManager();
     const auto& ship = entityManager.createEntity();
 
     entityManager.addComponent<model::component::Transform>(ship) = transform;
     entityManager.addComponent<component::Player>(ship) = playerState;
 
-    auto& shape = entityManager.addComponent<model::component::Shape>(ship);
-    shape.points = {{-10.f, 10.f},
-                    {-10.f, -10.f},
-                    {20.f,  0.f}};
+    entityManager.addComponent<model::component::Shape>(ship).points = shape;
 
     entityManager.addComponent<component::RigidBody>(ship).mass = 3.0f;
 
     auto& collider = entityManager.addComponent<component::Collider>(ship);
-    collider.radius = 10.f;
+    collider.radius = 15.f;
     collider.layer = playerState.layer;
 
     return ship;
@@ -126,8 +136,8 @@ void GameController::startMatch() {
     secondPlayerTransform.position = math::Vec2 {_engine.world().worldSize().x - playerStartOffset, playerStartOffset };
     secondPlayerTransform.angle = M_PI / 4 + M_PI / 2;
 
-    _players[0] = addPlayer(_engine, firstPlayer, firstPlayerTransform);
-    _players[1] = addPlayer(_engine, secondPlayer, secondPlayerTransform);
+    _players[0] = addPlayer(_engine, firstPlayer, firstPlayerTransform, firstShapePoints);
+    _players[1] = addPlayer(_engine, secondPlayer, secondPlayerTransform, secondShapePoints);
 }
 
 void GameController::addScore(GameController::Player player) {
