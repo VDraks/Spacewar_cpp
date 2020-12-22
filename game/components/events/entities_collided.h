@@ -3,6 +3,7 @@
 #include <array>
 
 #include "ecs/component.h"
+#include "ecs/entity.h"
 
 namespace game::component::event {
 
