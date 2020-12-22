@@ -1,7 +1,7 @@
-#include <game/components/player.h>
 #include "game_state_system.h"
 
 #include "game/components/events/entities_collided.h"
+#include "game/components/player.h"
 #include "game/game_controller.h"
 
 namespace game::system {
@@ -13,24 +13,21 @@ GameStateSystem::GameStateSystem(GameController& gameController) :
 
 void GameStateSystem::update(float dt, ecs::EntityManager& entityManager) {
 
-    std::array<bool, 2> playerIsDead = { false, false };
+    std::vector<ecs::Entity> deadPlayers;
     for (const auto& [entity, components] : entityManager.getEntitySet<EntitiesCollided>()) {
-
         const auto& [collision] = components;
 
         for (const auto& collidedEntity : collision.entities) {
             if (entityManager.hasComponent<component::Player>(collidedEntity)) {
-                const auto& player = entityManager.getComponent<component::Player>(collidedEntity);
-                playerIsDead.at(player.layer) = true;
+                deadPlayers.push_back(collidedEntity);
             }
         }
     }
 
-    if (playerIsDead[0]) _gameController.addScore(GameController::Player::Second);
-    if (playerIsDead[1]) _gameController.addScore(GameController::Player::First);
+    deadPlayers.erase(std::unique(deadPlayers.begin(), deadPlayers.end()), deadPlayers.end());
 
-    if (playerIsDead[0] || playerIsDead[1]) {
-        _gameController.startMatch();
+    if (!deadPlayers.empty()) {
+        _gameController.setDeadPlayers(deadPlayers);
     }
 }
 

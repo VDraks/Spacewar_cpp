@@ -13,6 +13,8 @@ public:
 
     void drawText(const std::string& text, const math::Vec2& pos) override;
 
+    void drawPoint(const math::Vec2& point, const DrawSettings& settings) override;
+
 private:
     SDL_Renderer* const _rend = nullptr;
     TTF_Font* const _font = nullptr;

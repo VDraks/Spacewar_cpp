@@ -1,6 +1,5 @@
 #pragma once
 
-#include <math/point.h>
 #include "math/vec_2.h"
 #include "ecs/entity_manager.h"
 

@@ -2,9 +2,15 @@
 
 #include <iostream>
 
+#include "model/systems/particle_system.h"
+#include "view/visualisers/particle_system_visualiser.h"
+
 Engine::Engine():
     _view(_world) {
 
+    addSystem<model::system::ParticleSystem>();
+
+    addVisualiser<view::visualiser::ParticleSystemVisualiser>(_world);
 }
 
 void Engine::run() {

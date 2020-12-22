@@ -6,6 +6,7 @@
 #include "game/components/player.h"
 #include "game/components/rigid_body.h"
 #include "game/components/star.h"
+#include "model/components/particle_system.h"
 #include "model/components/shape.h"
 #include "model/components/transform.h"
 
@@ -17,7 +18,7 @@ namespace {
 
 constexpr float playerStartOffset = 80.f;
 
-void addPlayer(Engine& engine, const component::Player& playerState, const Transform& transform) {
+ecs::Entity addPlayer(Engine& engine, const component::Player& playerState, const Transform& transform) {
     auto& entityManager = engine.world().entityManager();
     const auto& ship = entityManager.createEntity();
 
@@ -34,6 +35,23 @@ void addPlayer(Engine& engine, const component::Player& playerState, const Trans
     auto& collider = entityManager.addComponent<component::Collider>(ship);
     collider.radius = 10.f;
     collider.layer = playerState.layer;
+
+    return ship;
+}
+
+void addDeathParticle(ecs::EntityManager& entityManager, const ecs::Entity& playerEntity) {
+    const auto entity = entityManager.createEntity();
+
+    auto transform = entityManager.getComponent<model::component::Transform>(playerEntity);
+
+    auto& particle = entityManager.addComponent<model::component::ParticleSystem>(entity);
+    particle.settings.amount = 40;
+    particle.settings.duration = 2.f;
+    particle.shapeSettings.scaleStart = 0.01f;
+    particle.shapeSettings.scaleEnd = 1.f;
+    particle.shapeSettings.radius = 20.f;
+
+    entityManager.addComponent<model::component::Transform>(entity) = transform;
 }
 
 void initStar(Engine& engine) {
@@ -51,6 +69,13 @@ void initStar(Engine& engine) {
     auto& collider = entityManager.addComponent<component::Collider>(star);
     collider.radius = 20.f;
     collider.layer = static_cast<int>(ColliderLayer::Star);
+
+    auto& particle = entityManager.addComponent<model::component::ParticleSystem>(star);
+    particle.settings.amount = 40;
+    particle.settings.loop = true;
+    particle.settings.duration = 1.f;
+    particle.shapeSettings.scaleEnd = 1.2f;
+    particle.shapeSettings.radius = 20.f;
 }
 
 void cleanWorld(ecs::EntityManager& entityManager) {
@@ -101,9 +126,8 @@ void GameController::startMatch() {
     secondPlayerTransform.position = math::Vec2 {_engine.world().worldSize().x - playerStartOffset, playerStartOffset };
     secondPlayerTransform.angle = M_PI / 4 + M_PI / 2;
 
-
-    addPlayer(_engine, firstPlayer, firstPlayerTransform);
-    addPlayer(_engine, secondPlayer, secondPlayerTransform);
+    _players[0] = addPlayer(_engine, firstPlayer, firstPlayerTransform);
+    _players[1] = addPlayer(_engine, secondPlayer, secondPlayerTransform);
 }
 
 void GameController::addScore(GameController::Player player) {
@@ -114,6 +138,20 @@ void GameController::startGame() {
     initStar(_engine);
 
     startMatch();
+}
+
+void GameController::setDeadPlayers(const std::vector<ecs::Entity>& deadPlayers) {
+
+    for (const auto player : deadPlayers) {
+        if (player == _players[0]) addScore(Player::Second);
+        if (player == _players[1]) addScore(Player::First);
+
+        addDeathParticle(_engine.world().entityManager(), player);
+    }
+
+    if (!deadPlayers.empty()) {
+        startMatch();
+    }
 }
 
 } // namespace game

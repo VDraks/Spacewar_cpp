@@ -22,9 +22,12 @@ public:
 
     [[nodiscard]] const model::World& world() const { return _engine.world(); }
 
+    void setDeadPlayers(const std::vector<ecs::Entity>& deadPlayers);
+
 private:
     Engine& _engine;
     std::array<int, 2> _playerScores = { 0, 0 };
+    std::array<ecs::Entity, 2> _players;
 };
 
 } // namespace game

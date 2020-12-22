@@ -3,7 +3,6 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <iostream>
-#include <cmath>
 
 #include "model/components/transform.h"
 #include "model/components/shape.h"
@@ -17,18 +16,10 @@ using namespace model::component;
 void DrawShape(const Shape& shape, const SDL_Color& color, SDL_Renderer* renderer, const Transform& transform) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 
-    const auto applyTransform = [](const math::Point& point, const model::component::Transform& transform) {
-        const float x =
-                point.x * std::cos(transform.angle) - point.y * std::sin(transform.angle) + transform.position.x;
-        const float y =
-                point.y * std::cos(transform.angle) + point.x * std::sin(transform.angle) + transform.position.y;
-        return math::Point{x, y};
-    };
-
-    const auto drawLine = [renderer, &transform, applyTransform](const math::Point& start, const math::Point& end) {
-        const auto newStart = applyTransform(start, transform);
-        const auto newEnd = applyTransform(end, transform);
-        SDL_RenderDrawLine(renderer, newStart.x, newStart.y, newEnd.x, newEnd.y);
+    const auto drawLine = [renderer, &transform](const math::Vec2& start, const math::Vec2& end) {
+        const auto newStart = transform.applyToPoint(start);
+        const auto newEnd = transform.applyToPoint(end);
+        SDL_RenderDrawLineF(renderer, newStart.x, newStart.y, newEnd.x, newEnd.y);
     };
 
     for (int i = 0; i < shape.points.size() - 1; ++i) {
@@ -54,6 +45,18 @@ struct MainView::Impl {
     explicit Impl(const model::World& world) :
             world(world) {
 
+        initSdl();
+
+        context = std::make_unique<VisualiserContext>(rend, font);
+    }
+
+    ~Impl() {
+        SDL_DestroyRenderer(rend);
+        SDL_DestroyWindow(win);
+        TTF_CloseFont(font);
+    }
+
+    void initSdl() {
         if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
             std::cout << "error initializing SDL: " << SDL_GetError() << std::endl;
             exit(1);
@@ -78,15 +81,9 @@ struct MainView::Impl {
         Uint32 render_flags = SDL_RENDERER_ACCELERATED;
         rend = SDL_CreateRenderer(win, -1, render_flags);
 
-        context = std::make_unique<VisualiserContext>(rend, font);
+
 
         SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "2" );
-    }
-
-    ~Impl() {
-        SDL_DestroyRenderer(rend);
-        SDL_DestroyWindow(win);
-        TTF_CloseFont(font);
     }
 };
 

@@ -7,7 +7,7 @@
 #include "game/components/bullet.h"
 #include "game/components/player.h"
 #include "game/components/rigid_body.h"
-#include "math/angle_utils.h"
+#include "math/utils.h"
 #include "model/components/shape.h"
 #include "model/components/transform.h"
 
@@ -24,7 +24,7 @@ constexpr float bulletSpeed = 70;
 void spawnBullet(ecs::EntityManager& entityManager, const Transform& transform, const component::RigidBody& rb, const int layer) {
     const auto& entity = entityManager.createEntity();
     auto& bulletTransform = entityManager.addComponent<Transform>(entity);
-    const auto direction = math::AngleUtils::angleVector(transform.angle);
+    const auto direction = math::Utils::angleVector(transform.angle);
     bulletTransform.position = transform.position + direction * 20;
 
     auto& bullet = entityManager.addComponent<component::Bullet>(entity);
@@ -72,7 +72,7 @@ void PlayerControllerSystem::update(float dt, ecs::EntityManager& entityManager)
         player.lastBulletTime += dt;
 
         if (_inputController.isPressed(player.thrustKey)) {
-            rb.force = rb.force + math::AngleUtils::angleVector(transform.angle) * shipForce;
+            rb.force = rb.force + math::Utils::angleVector(transform.angle) * shipForce;
         }
     }
 
