@@ -15,6 +15,8 @@ public:
 
     void drawPoint(const math::Vec2& point, const DrawSettings& settings) override;
 
+    void drawRect(const math::Vec2& point, const math::Vec2& size, const DrawSettings& settings) override;
+
 private:
     SDL_Renderer* const _rend = nullptr;
     TTF_Font* const _font = nullptr;

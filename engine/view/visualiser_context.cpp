@@ -13,13 +13,13 @@ void VisualiserContext::drawText(const std::string& text, const math::Vec2& pos)
 
     SDL_Texture* message = SDL_CreateTextureFromSurface(_rend, surfaceMessage);
 
-    SDL_FRect Message_rect;
-    Message_rect.w = text.size() * 15.f;
-    Message_rect.h = 30.f;
-    Message_rect.x = pos.x - Message_rect.w / 2;
-    Message_rect.y = pos.y - Message_rect.h / 2;
+    SDL_FRect textRect;
+    textRect.w = text.size() * 15.f;
+    textRect.h = 30.f;
+    textRect.x = pos.x - textRect.w / 2;
+    textRect.y = pos.y - textRect.h / 2;
 
-    SDL_RenderCopyF(_rend, message, nullptr, &Message_rect);
+    SDL_RenderCopyF(_rend, message, nullptr, &textRect);
 
     SDL_FreeSurface(surfaceMessage);
     SDL_DestroyTexture(message);
@@ -29,6 +29,21 @@ void VisualiserContext::drawPoint(const math::Vec2& point, const DrawSettings& s
     const auto& color = settings.color;
     SDL_SetRenderDrawColor(_rend,  color.r, color.g, color.b, color.a);
     SDL_RenderDrawPointF(_rend, point.x, point.y);
+}
+
+void VisualiserContext::drawRect(const math::Vec2& point, const math::Vec2& size, const DrawSettings& settings) {
+    const auto& color = settings.color;
+    SDL_SetRenderDrawColor(_rend,  color.r, color.g, color.b, color.a);
+    SDL_FRect rect;
+    rect.w = size.x;
+    rect.h = size.y;
+    rect.x = point.x;
+    rect.y = point.y;
+    if (settings.fill) {
+        SDL_RenderFillRectF(_rend, &rect);
+    } else {
+        SDL_RenderDrawRectF(_rend, &rect);
+    }
 }
 
 } // namespace view

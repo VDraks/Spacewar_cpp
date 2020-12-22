@@ -76,7 +76,8 @@ void PlayerControllerSystem::update(float dt, ecs::EntityManager& entityManager)
         }
 
         if (_inputController.isPressed(player.fireKey)) {
-            if (player.lastBulletTime > component::Player::bulletTimeout) {
+            if (player.bulletCount > 0 && player.lastBulletTime > component::Player::bulletTimeout) {
+                player.bulletCount--;
                 spawners.emplace_back([t = transform, rb = rb, l = player.layer, &entityManager]() {
                     spawnBullet(entityManager, t, rb, l);
                 });
@@ -85,13 +86,16 @@ void PlayerControllerSystem::update(float dt, ecs::EntityManager& entityManager)
         }
 
         if (_inputController.isPressed(player.thrustKey)) {
-            rb.force = rb.force + math::Utils::angleVector(transform.angle) * shipForce;
+            if (player.fuelValue > 0) {
+                player.fuelValue -= dt;
+                rb.force = rb.force + math::Utils::angleVector(transform.angle) * shipForce;
 
-            if (player.lastFuelParticleTime > component::Player::fuelParticleTimeout) {
-                spawners.emplace_back([t = transform, &entityManager]() {
-                    spawnFuelParticle(entityManager, t);
-                });
-                player.lastFuelParticleTime = 0;
+                if (player.lastFuelParticleTime > component::Player::fuelParticleTimeout) {
+                    spawners.emplace_back([t = transform, &entityManager]() {
+                        spawnFuelParticle(entityManager, t);
+                    });
+                    player.lastFuelParticleTime = 0;
+                }
             }
         }
 

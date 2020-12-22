@@ -15,10 +15,16 @@ struct Player : public ecs::Component<Player> {
     inline static constexpr float bulletTimeout = 0.5f;
     float lastBulletTime = bulletTimeout;
 
+    inline static constexpr int bulletMaxCount = 20;
+    int bulletCount = bulletMaxCount;
+
     int layer = -1;
 
     inline static constexpr float fuelParticleTimeout = 0.01f;
     float lastFuelParticleTime = fuelParticleTimeout;
+
+    inline static constexpr float fuelMaxValue = 20.f;
+    float fuelValue = fuelMaxValue;
 };
 
 } // namespace game::component

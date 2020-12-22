@@ -20,14 +20,14 @@ constexpr float playerStartOffset = 80.f;
 
 const std::vector<math::Vec2> firstShapePoints {
         {-12.f, 10.f},
-        {-10.f, -10.f},
+        {-12.f, -10.f},
         {20.f,  0.f}
 };
 
 const std::vector<math::Vec2> secondShapePoints {
-        {-10.f, 8.f}, {-2.f, 8.f}, {-2.f, 4.f},
+        {-12.f, 8.f}, {-2.f, 8.f}, {-2.f, 4.f},
         {16.f, 4.f}, {20.f, 0.f}, {16.f, -4.f},
-        {-2.f, -4.f}, {-2.f, -8.f}, {-10.f, -8.f}
+        {-2.f, -4.f}, {-2.f, -8.f}, {-12.f, -8.f}
 };
 
 ecs::Entity addPlayer(Engine& engine, const component::Player& playerState,
