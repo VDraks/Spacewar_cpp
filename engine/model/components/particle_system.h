@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SDL_pixels.h>
+
 #include "math/vec_2.h"
 #include "ecs/component.h"
 
@@ -10,12 +12,11 @@ struct ParticleSystem : public ecs::Component<ParticleSystem> {
         bool loop = false;
         float duration = 1.f;
         int amount = 1;
+        SDL_Color color = { 255, 255, 255, 255 };
     };
 
     struct ShapeSettings {
         math::Vec2 offset;
-        float rotationStart = 0.f;
-        float rotationEnd = 0.f;
         float scaleStart = 1.f;
         float scaleEnd = 1.f;
         float radius = 1.f;

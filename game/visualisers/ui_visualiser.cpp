@@ -1,5 +1,6 @@
 #include "ui_visualiser.h"
 
+#include "game/game_config.h"
 #include "game/collider_layer.h"
 #include "game/components/player.h"
 
@@ -12,9 +13,6 @@ constexpr float rectWidth = 80.f;
 constexpr float rectHeight = 10.f;
 constexpr float rectOffsetX = 20.f;
 constexpr float rectOffsetY = 20.f;
-
-constexpr SDL_Color fuelColor = { 230, 172, 39, 255 };
-constexpr SDL_Color bulletColor = { 0, 255, 255, 255 };
 
 void drawProgressRect(view::IVisualiserContext* context, const math::Vec2& pos, const SDL_Color& color, const float valueFactor) {
     view::DrawSettings settings;
@@ -49,14 +47,11 @@ void UiVisualiser::render(view::IVisualiserContext* context) {
                 ? rectOffsetX
                 : (size.x - rectOffsetX - rectWidth);
 
-        view::DrawSettings settings;
-        settings.color = fuelColor;
-
         math::Vec2 pos{x, size.y - rectOffsetY};
-        drawProgressRect(context, pos, fuelColor, player.fuelValue / game::component::Player::fuelMaxValue);
+        drawProgressRect(context, pos, GameConfig::fuelColor, player.fuelValue / game::component::Player::fuelMaxValue);
 
         pos.y -= rectOffsetY * 1.2f;
-        drawProgressRect(context, pos, bulletColor, static_cast<float>(player.bulletCount) / game::component::Player::bulletMaxCount);
+        drawProgressRect(context, pos, GameConfig::bulletColor, static_cast<float>(player.bulletCount) / game::component::Player::bulletMaxCount);
     }
 }
 

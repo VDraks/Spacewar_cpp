@@ -13,7 +13,8 @@ namespace view {
 
 using namespace model::component;
 
-void DrawShape(const Shape& shape, const SDL_Color& color, SDL_Renderer* renderer, const Transform& transform) {
+void drawShape(const Shape& shape, SDL_Renderer* renderer, const Transform& transform) {
+    const SDL_Color& color = shape.color;
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 
     const auto drawLine = [renderer, &transform](const math::Vec2& start, const math::Vec2& end) {
@@ -101,7 +102,7 @@ void MainView::render() {
     const auto& shapes = _d->world.entityManager().getEntitySet<model::component::Transform, model::component::Shape>();
     for (const auto& [entity, components] : shapes) {
         const auto& [transform, shape] = components;
-        DrawShape(shape, SDL_Color{0, 255, 0, 255}, _d->rend, transform);
+        drawShape(shape, _d->rend, transform);
     }
 
     for (const auto& visualiser : _d->visualisers) {

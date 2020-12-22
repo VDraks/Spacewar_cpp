@@ -1,6 +1,7 @@
 #include "game_controller.h"
 
 #include "collider_layer.h"
+#include "game_config.h"
 #include "game/components/bullet.h"
 #include "game/components/collider.h"
 #include "game/components/player.h"
@@ -31,14 +32,16 @@ const std::vector<math::Vec2> secondShapePoints {
 };
 
 ecs::Entity addPlayer(Engine& engine, const component::Player& playerState,
-                      const Transform& transform, const std::vector<math::Vec2>& shape) {
+                      const Transform& transform, const std::vector<math::Vec2>& shapePoints) {
     auto& entityManager = engine.world().entityManager();
     const auto& ship = entityManager.createEntity();
 
     entityManager.addComponent<model::component::Transform>(ship) = transform;
     entityManager.addComponent<component::Player>(ship) = playerState;
 
-    entityManager.addComponent<model::component::Shape>(ship).points = shape;
+    auto& shape = entityManager.addComponent<model::component::Shape>(ship);
+    shape.points = shapePoints;
+    shape.color = GameConfig::shipColor;
 
     entityManager.addComponent<component::RigidBody>(ship).mass = 3.0f;
 
@@ -73,6 +76,7 @@ void initStar(Engine& engine) {
     auto& shape = entityManager.addComponent<model::component::Shape>(star);
     shape.points = { {0.f,  20.f }, { 5.f,  5.f }, { 20.f, 0.f }, { 5.f, -5.f },
                      {0.f, -20.f }, {-5.f, -5.f }, {-20.f, 0.f }, {-5.f,  5.f } };
+    shape.color = GameConfig::starColor;
 
     entityManager.addComponent<component::Star>(star);
 
@@ -86,6 +90,7 @@ void initStar(Engine& engine) {
     particle.settings.duration = 1.f;
     particle.shapeSettings.scaleEnd = 1.2f;
     particle.shapeSettings.radius = 20.f;
+    particle.settings.color = GameConfig::starColor;
 }
 
 void cleanWorld(ecs::EntityManager& entityManager) {

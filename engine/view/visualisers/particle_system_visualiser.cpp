@@ -13,11 +13,14 @@ void ParticleSystemVisualiser::render(IVisualiserContext* context) {
     for (const auto& [entity, components] : _world.entityManager().getEntitySet<Transform, ParticleSystem>()) {
         const auto& [transform, particle] = components;
 
+        DrawSettings settings;
+        settings.color = particle.settings.color;
+
         for (auto point : particle.points) {
             point = point * particle.scale;
             point = point + particle.shapeSettings.offset;
             point = transform.applyToPoint(point);
-            context->drawPoint(point);
+            context->drawPoint(point, settings);
         }
     }
 }

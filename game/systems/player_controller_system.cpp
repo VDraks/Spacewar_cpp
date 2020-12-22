@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 
+#include "game/game_config.h"
 #include "game/components/bullet.h"
 #include "game/components/collider.h"
 #include "game/components/player.h"
@@ -34,6 +35,7 @@ void spawnBullet(ecs::EntityManager& entityManager, const Transform& transform, 
     auto& shape = entityManager.addComponent<Shape>(entity);
     shape.points = { { 1.f,  1.f }, { 1.f, -1.f },
                      {-1.f, -1.f }, {-1.f,  1.f } };
+    shape.color = GameConfig::bulletColor;
 
     auto& collider = entityManager.addComponent<component::Collider>(entity);
     collider.radius = 1.f;
@@ -50,6 +52,7 @@ void spawnFuelParticle(ecs::EntityManager& entityManager, const model::component
     particle.shapeSettings.scaleEnd = 1.f;
     particle.shapeSettings.radius = 3.f;
     particle.shapeSettings.offset.x = -10.f;
+    particle.settings.color = GameConfig::fuelColor;
 
     entityManager.addComponent<model::component::Transform>(entity) = transform;
 }
