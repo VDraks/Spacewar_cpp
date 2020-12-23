@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1FF6DCE6-5F3B-3C0D-9B5F-F6EF573DF014}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>Spacewar</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Spacewar.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Spacewar</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Spacewar.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Spacewar</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(SolutionDir)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Spacewar.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Spacewar</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(SolutionDir)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Spacewar.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Spacewar</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories> $(SolutionDir)\..\engine; $(SolutionDir)\..; $(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include; $(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>game\Debug\Game.lib;engine\Debug\Engine.lib;engine\view\Debug\View.lib;engine\model\Debug\Model.lib;..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;engine\controller\Debug\Controller.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/Debug/Spacewar.lib</ImportLibrary>
+      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/Debug/Spacewar.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories> $(SolutionDir)\..\engine; $(SolutionDir)\..; $(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include; $(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>game\Release\Game.lib;engine\Release\Engine.lib;engine\view\Release\View.lib;engine\model\Release\Model.lib;..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;engine\controller\Release\Controller.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/Release/Spacewar.lib</ImportLibrary>
+      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/Release/Spacewar.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories> $(SolutionDir)\..\engine; $(SolutionDir)\..; $(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include; $(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>game\MinSizeRel\Game.lib;engine\MinSizeRel\Engine.lib;engine\view\MinSizeRel\View.lib;engine\model\MinSizeRel\Model.lib;..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;engine\controller\MinSizeRel\Controller.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/MinSizeRel/Spacewar.lib</ImportLibrary>
+      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/MinSizeRel/Spacewar.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories> $(SolutionDir)\..\engine; $(SolutionDir)\..; $(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include; $(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>game\RelWithDebInfo\Game.lib;engine\RelWithDebInfo\Engine.lib;engine\view\RelWithDebInfo\View.lib;engine\model\RelWithDebInfo\Model.lib;..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;engine\controller\RelWithDebInfo\Controller.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/RelWithDebInfo/Spacewar.lib</ImportLibrary>
+      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/RelWithDebInfo/Spacewar.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)$(Configuration)" /y
+xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="Q:\workspace\cpp\Spacewar\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Q:\workspace\cpp\Spacewar\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\ZERO_CHECK.vcxproj">
+      <Project>{C7CCB374-0CAD-34B6-A932-9135282897E8}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\controller\Controller.vcxproj">
+      <Project>{6F770FB8-5AC6-36A8-B5B2-CD56E1C5B37B}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\Engine.vcxproj">
+      <Project>{DE60DE4D-9ADA-37D8-9D8B-79939CE2435A}</Project>
+      <Name>Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\game\Game.vcxproj">
+      <Project>{96D3DA3B-01F1-33C5-A779-57D503E45928}</Project>
+      <Name>Game</Name>
+    </ProjectReference>
+    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\model\Model.vcxproj">
+      <Project>{B6193EE8-D7D6-396E-B0E0-5B76521E5D51}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\view\View.vcxproj">
+      <Project>{7C38ECAB-7236-38AB-8831-8437DE4ADD6E}</Project>
+      <Name>View</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

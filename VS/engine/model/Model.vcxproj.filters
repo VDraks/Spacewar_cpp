@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Q:\workspace\cpp\Spacewar\engine\model\game_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Q:\workspace\cpp\Spacewar\engine\model\systems\particle_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Q:\workspace\cpp\Spacewar\engine\model\world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Q:\workspace\cpp\Spacewar\engine\model\components\particle_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Q:\workspace\cpp\Spacewar\engine\model\components\shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Q:\workspace\cpp\Spacewar\engine\model\components\transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Q:\workspace\cpp\Spacewar\engine\model\game_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Q:\workspace\cpp\Spacewar\engine\model\systems\particle_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Q:\workspace\cpp\Spacewar\engine\model\world.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Q:\workspace\cpp\Spacewar\engine\model\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B04F3935-4720-31BA-B437-1B06F6033FF3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CE1D8B2B-B927-309E-8ECC-4A8B372D24FC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

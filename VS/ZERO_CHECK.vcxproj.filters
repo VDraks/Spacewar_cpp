@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="Q:\workspace\cpp\Spacewar\VS\CMakeFiles\a07a44f357d67bb83a5e131c363ba810\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3EF4E358-090B-3AD5-9489-42951B2B6B2C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
