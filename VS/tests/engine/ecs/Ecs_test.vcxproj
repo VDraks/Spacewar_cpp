@@ -257,76 +257,14 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="Q:\workspace\cpp\Spacewar\tests\engine\ecs\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/tests/engine/ecs/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\tests\engine\ecs\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/tests/engine/ecs/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\tests\engine\ecs\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/tests/engine/ecs/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\tests\engine\ecs\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/tests/engine/ecs/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\tests\engine\ecs\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
-    </CustomBuild>
+    <ClCompile Include="$(SolutionDir)\..\tests\engine\ecs\ecs_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\tests\engine\ecs\ecs_test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\ZERO_CHECK.vcxproj">
-      <Project>{C7CCB374-0CAD-34B6-A932-9135282897E8}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\googletest-1.7.0\gtest.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\googletest-1.7.0\gtest.vcxproj">
       <Project>{D0764273-B68A-363C-AEE9-32659F5CBDE4}</Project>
       <Name>gtest</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\googletest-1.7.0\gtest_main.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\googletest-1.7.0\gtest_main.vcxproj">
       <Project>{18CEFA2E-3C75-3269-A375-9E4170B0E745}</Project>
       <Name>gtest_main</Name>
     </ProjectReference>

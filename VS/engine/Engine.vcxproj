@@ -209,80 +209,18 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="Q:\workspace\cpp\Spacewar\engine\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/engine/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/engine/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckCSourceCompiles.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckIncludeFile.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckLibraryExists.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageHandleStandardArgs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageMessage.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindThreads.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Internal\CheckSourceCompiles.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;Q:\workspace\cpp\Spacewar\cmake\sdl2\FindSDL2.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\engine\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/engine/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/engine/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckCSourceCompiles.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckIncludeFile.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckLibraryExists.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageHandleStandardArgs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageMessage.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindThreads.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Internal\CheckSourceCompiles.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;Q:\workspace\cpp\Spacewar\cmake\sdl2\FindSDL2.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\engine\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/engine/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/engine/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckCSourceCompiles.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckIncludeFile.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckLibraryExists.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageHandleStandardArgs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageMessage.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindThreads.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Internal\CheckSourceCompiles.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;Q:\workspace\cpp\Spacewar\cmake\sdl2\FindSDL2.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\engine\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/engine/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/engine/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckCSourceCompiles.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckIncludeFile.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CheckLibraryExists.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageHandleStandardArgs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindPackageMessage.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\FindThreads.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Internal\CheckSourceCompiles.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;Q:\workspace\cpp\Spacewar\cmake\sdl2\FindSDL2.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\engine\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
-    </CustomBuild>
+    <ClCompile Include="$(SolutionDir)\..\engine\engine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\engine\engine.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\ZERO_CHECK.vcxproj">
-      <Project>{C7CCB374-0CAD-34B6-A932-9135282897E8}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\controller\Controller.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\controller\Controller.vcxproj">
       <Project>{6F770FB8-5AC6-36A8-B5B2-CD56E1C5B37B}</Project>
       <Name>Controller</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\model\Model.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\model\Model.vcxproj">
       <Project>{B6193EE8-D7D6-396E-B0E0-5B76521E5D51}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\view\View.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\view\View.vcxproj">
       <Project>{7C38ECAB-7236-38AB-8831-8437DE4ADD6E}</Project>
       <Name>View</Name>
     </ProjectReference>

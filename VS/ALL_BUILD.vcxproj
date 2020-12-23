@@ -102,107 +102,45 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="Q:\workspace\cpp\Spacewar\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCXXInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeCommonLanguageInclude.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeGenericSystem.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeInitializeConfigs.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeLanguageInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeRCInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInformation.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\CMakeSystemSpecificInitialize.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\CMakeCommonCompilerMacros.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Compiler\MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-C.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC-CXX.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows-MSVC.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\Windows.cmake;Q:\Program Files\CMake\share\cmake-3.19\Modules\Platform\WindowsPaths.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeCXXCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeRCCompiler.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\3.19.2\CMakeSystem.cmake;Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\ZERO_CHECK.vcxproj">
-      <Project>{C7CCB374-0CAD-34B6-A932-9135282897E8}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\controller\Controller.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\controller\Controller.vcxproj">
       <Project>{6F770FB8-5AC6-36A8-B5B2-CD56E1C5B37B}</Project>
       <Name>Controller</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\engine\ecs\Ecs_test.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\engine\ecs\Ecs_test.vcxproj">
       <Project>{EA8A5DBD-1B91-3BC2-B428-3768F27A3B23}</Project>
       <Name>Ecs_test</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\Engine.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\Engine.vcxproj">
       <Project>{DE60DE4D-9ADA-37D8-9D8B-79939CE2435A}</Project>
       <Name>Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\game\Game.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\game\Game.vcxproj">
       <Project>{96D3DA3B-01F1-33C5-A779-57D503E45928}</Project>
       <Name>Game</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\game\Game_test.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\game\Game_test.vcxproj">
       <Project>{1B668BF8-AC36-32C1-ABD0-D82A0D7B9B55}</Project>
       <Name>Game_test</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\model\Model.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\model\Model.vcxproj">
       <Project>{B6193EE8-D7D6-396E-B0E0-5B76521E5D51}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\Spacewar.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\Spacewar.vcxproj">
       <Project>{1FF6DCE6-5F3B-3C0D-9B5F-F6EF573DF014}</Project>
       <Name>Spacewar</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\view\View.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\view\View.vcxproj">
       <Project>{7C38ECAB-7236-38AB-8831-8437DE4ADD6E}</Project>
       <Name>View</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\googletest-1.7.0\gtest.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\googletest-1.7.0\gtest.vcxproj">
       <Project>{D0764273-B68A-363C-AEE9-32659F5CBDE4}</Project>
       <Name>gtest</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\googletest-1.7.0\gtest_main.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\googletest-1.7.0\gtest_main.vcxproj">
       <Project>{18CEFA2E-3C75-3269-A375-9E4170B0E745}</Project>
       <Name>gtest_main</Name>
     </ProjectReference>

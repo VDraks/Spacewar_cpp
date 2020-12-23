@@ -102,7 +102,7 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\CMakeLists.txt">
+    <CustomBuild Include="$(SolutionDir)\..\tests\googletest-1.7.0\CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/tests/googletest-1.7.0/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 "Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/tests/googletest-1.7.0/CMakeFiles/generate.stamp
@@ -160,17 +160,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\ZERO_CHECK.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\ZERO_CHECK.vcxproj">
       <Project>{C7CCB374-0CAD-34B6-A932-9135282897E8}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\googletest-1.7.0\gtest.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\googletest-1.7.0\gtest.vcxproj">
       <Project>{D0764273-B68A-363C-AEE9-32659F5CBDE4}</Project>
       <Name>gtest</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\tests\googletest-1.7.0\gtest_main.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\tests\googletest-1.7.0\gtest_main.vcxproj">
       <Project>{18CEFA2E-3C75-3269-A375-9E4170B0E745}</Project>
       <Name>gtest_main</Name>
     </ProjectReference>

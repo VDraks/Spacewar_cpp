@@ -209,113 +209,51 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="Q:\workspace\cpp\Spacewar\game\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/game/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/game/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Q:\workspace\cpp\Spacewar\VS\game\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/game/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/game/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Q:\workspace\cpp\Spacewar\VS\game\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/game/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/game/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Q:\workspace\cpp\Spacewar\VS\game\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule Q:/workspace/cpp/Spacewar/game/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"Q:\Program Files\CMake\bin\cmake.exe" -SQ:/workspace/cpp/Spacewar -BQ:/workspace/cpp/Spacewar/VS --check-stamp-file Q:/workspace/cpp/Spacewar/VS/game/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Q:\workspace\cpp\Spacewar\VS\game\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
-    </CustomBuild>
+    <ClInclude Include="$(SolutionDir)\..\game\collider_layer.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\components\bullet.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\components\collider.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\components\events\entities_collided.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\components\player.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\components\rigid_body.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\components\star.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\game.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\game.h" />
+    <ClInclude Include="$(SolutionDir)\..\game\game_config.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\game_controller.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\game_controller.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\model\player_state.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\model\player_state.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\bullet_controller_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\bullet_controller_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\game_state_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\game_state_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\physics\apply_forces_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\physics\apply_forces_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\physics\calculate_forces_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\physics\calculate_forces_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\physics\collision_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\physics\collision_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\player_controller_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\player_controller_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\systems\world_boundary_system.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\systems\world_boundary_system.h" />
+    <ClCompile Include="$(SolutionDir)\..\game\visualisers\ui_visualiser.cpp" />
+    <ClInclude Include="$(SolutionDir)\..\game\visualisers\ui_visualiser.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\collider_layer.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\components\bullet.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\components\collider.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\components\events\entities_collided.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\components\player.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\components\rigid_body.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\components\star.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\game.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\game.h" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\game_config.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\game_controller.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\game_controller.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\model\player_state.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\model\player_state.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\bullet_controller_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\bullet_controller_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\game_state_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\game_state_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\physics\apply_forces_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\physics\apply_forces_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\physics\calculate_forces_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\physics\calculate_forces_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\physics\collision_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\physics\collision_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\player_controller_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\player_controller_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\systems\world_boundary_system.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\systems\world_boundary_system.h" />
-    <ClCompile Include="Q:\workspace\cpp\Spacewar\game\visualisers\ui_visualiser.cpp" />
-    <ClInclude Include="Q:\workspace\cpp\Spacewar\game\visualisers\ui_visualiser.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\ZERO_CHECK.vcxproj">
-      <Project>{C7CCB374-0CAD-34B6-A932-9135282897E8}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\controller\Controller.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\controller\Controller.vcxproj">
       <Project>{6F770FB8-5AC6-36A8-B5B2-CD56E1C5B37B}</Project>
       <Name>Controller</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\Engine.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\Engine.vcxproj">
       <Project>{DE60DE4D-9ADA-37D8-9D8B-79939CE2435A}</Project>
       <Name>Engine</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\model\Model.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\model\Model.vcxproj">
       <Project>{B6193EE8-D7D6-396E-B0E0-5B76521E5D51}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="Q:\workspace\cpp\Spacewar\VS\engine\view\View.vcxproj">
+    <ProjectReference Include="$(SolutionDir)\..\VS\engine\view\View.vcxproj">
       <Project>{7C38ECAB-7236-38AB-8831-8437DE4ADD6E}</Project>
       <Name>View</Name>
     </ProjectReference>
