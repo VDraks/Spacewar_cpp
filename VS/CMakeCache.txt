@@ -210,7 +210,7 @@ SDL2_LIBRARY:FILEPATH=Q:/workspace/cpp/Spacewar/third_party/SDL2/VC/SDL2-2.0.12/
 SDL2_NO_DEFAULT_PATH:BOOL=OFF
 
 //Custom SDL2 Library path
-SDL2_PATH:STRING=Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12
+SDL2_PATH:STRING=$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12
 
 //Where the SDL2_ttf headers can be found
 SDL2_TTF_INCLUDE_DIR:PATH=Q:/workspace/cpp/Spacewar/third_party/SDL2/VC/SDL2_ttf-2.0.15/include
@@ -222,7 +222,7 @@ SDL2_TTF_LIBRARY:FILEPATH=Q:/workspace/cpp/Spacewar/third_party/SDL2/VC/SDL2_ttf
 SDL2_TTF_NO_DEFAULT_PATH:BOOL=OFF
 
 //Custom SDL2_ttf Library path
-SDL2_TTF_PATH:STRING=Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15
+SDL2_TTF_PATH:STRING=$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15
 
 //Value Computed by CMake
 Spacewar_BINARY_DIR:STATIC=Q:/workspace/cpp/Spacewar/VS

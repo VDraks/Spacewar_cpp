@@ -93,10 +93,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -109,7 +109,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -127,10 +127,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -143,7 +143,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -161,10 +161,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -177,7 +177,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -194,10 +194,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2-2.0.12\include;Q:\workspace\cpp\Spacewar\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..;$(SolutionDir)\..\third_party\SDL2\VC\SDL2-2.0.12\include;$(SolutionDir)\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

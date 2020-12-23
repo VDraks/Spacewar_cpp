@@ -98,10 +98,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;GTEST_LANG_CXX11=1;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -136,10 +136,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;GTEST_LANG_CXX11=1;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -174,10 +174,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;GTEST_LANG_CXX11=1;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -212,10 +212,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;GTEST_LANG_CXX11=1;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>Q:\workspace\cpp\Spacewar\engine;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0\include;Q:\workspace\cpp\Spacewar\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\engine;$(SolutionDir)\..\tests\googletest-1.7.0\include;$(SolutionDir)\..\tests\googletest-1.7.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
