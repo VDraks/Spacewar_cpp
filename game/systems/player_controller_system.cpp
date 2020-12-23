@@ -20,7 +20,7 @@ using namespace model::component;
 
 namespace {
 
-constexpr float shipAngleSpeed = M_PI / 4;
+constexpr float shipAngleSpeed = static_cast<float>(M_PI) / 4;
 constexpr float shipForce = 50;
 constexpr float bulletSpeed = 70;
 

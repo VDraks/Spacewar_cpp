@@ -14,10 +14,10 @@ Engine::Engine():
 }
 
 void Engine::run() {
-    float lastTime = SDL_GetTicks();
+    auto lastTime = static_cast<float>(SDL_GetTicks());
 
     while (!_inputController.isClose()) {
-        float nowTime = SDL_GetTicks();
+        auto nowTime = static_cast<float>(SDL_GetTicks());
         float deltaTime = (nowTime - lastTime) / 1000.f;
         lastTime = nowTime;
 

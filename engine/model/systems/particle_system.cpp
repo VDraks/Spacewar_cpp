@@ -49,7 +49,7 @@ float ParticleSystem::randomRange(float min, float max) {
 }
 
 math::Vec2 ParticleSystem::generatePoint(float radius) {
-    const float angle = randomRange(0.f, M_PI * 2.f);
+    const float angle = randomRange(0.f, static_cast<float>(M_PI) * 2.f);
     return math::Utils::angleVector(angle) * randomRange(0.f, radius);
 }
 

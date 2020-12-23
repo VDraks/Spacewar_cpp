@@ -129,7 +129,7 @@ void GameController::startMatch() {
 
     Transform firstPlayerTransform;
     firstPlayerTransform.position = math::Vec2 {playerStartOffset, _engine.world().worldSize().y - playerStartOffset };
-    firstPlayerTransform.angle = -(M_PI / 4);
+    firstPlayerTransform.angle = -(static_cast<float>(M_PI) / 4);
 
     component::Player secondPlayer;
     secondPlayer.rightKey = SDL_SCANCODE_RIGHT;
@@ -141,7 +141,7 @@ void GameController::startMatch() {
 
     Transform secondPlayerTransform;
     secondPlayerTransform.position = math::Vec2 {_engine.world().worldSize().x - playerStartOffset, playerStartOffset };
-    secondPlayerTransform.angle = M_PI / 4 + M_PI / 2;
+    secondPlayerTransform.angle = static_cast<float>(M_PI) / 4 + static_cast<float>(M_PI) / 2;
 
     _players[0] = addPlayer(_engine, firstPlayer, firstPlayerTransform, firstShapePoints);
     _players[1] = addPlayer(_engine, secondPlayer, secondPlayerTransform, secondShapePoints);

@@ -23,7 +23,7 @@ void drawShape(const Shape& shape, SDL_Renderer* renderer, const Transform& tran
         SDL_RenderDrawLineF(renderer, newStart.x, newStart.y, newEnd.x, newEnd.y);
     };
 
-    for (int i = 0; i < shape.points.size() - 1; ++i) {
+    for (std::size_t i = 0; i < shape.points.size() - 1; ++i) {
         drawLine(shape.points[i], shape.points[i + 1]);
     }
     drawLine(shape.points.back(), shape.points[0]);
@@ -75,9 +75,8 @@ struct MainView::Impl {
         }
 
         win = SDL_CreateWindow("Spacewar",
-                               SDL_WINDOWPOS_CENTERED,
-                               SDL_WINDOWPOS_CENTERED,
-                               world.worldSize().x, world.worldSize().y, 0);
+                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                               static_cast<int>(world.worldSize().x), static_cast<int>(world.worldSize().y), 0);
 
         Uint32 render_flags = SDL_RENDERER_ACCELERATED;
         rend = SDL_CreateRenderer(win, -1, render_flags);
