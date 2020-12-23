@@ -118,8 +118,6 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/Debug/Spacewar.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/Debug/Spacewar.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -169,7 +167,6 @@ xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/Release/Spacewar.lib</ImportLibrary>
       <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/Release/Spacewar.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -220,7 +217,6 @@ xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/MinSizeRel/Spacewar.lib</ImportLibrary>
       <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/MinSizeRel/Spacewar.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -270,7 +266,6 @@ xcopy "$(ProjectDir)..\resources" "$(ProjectDir)" /y</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/RelWithDebInfo/Spacewar.lib</ImportLibrary>
       <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/RelWithDebInfo/Spacewar.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>

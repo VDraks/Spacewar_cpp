@@ -117,8 +117,6 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/Debug/Ecs_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/Debug/Ecs_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -161,8 +159,6 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/Release/Ecs_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/Release/Ecs_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -205,8 +201,6 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/MinSizeRel/Ecs_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/MinSizeRel/Ecs_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -248,8 +242,6 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/RelWithDebInfo/Ecs_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/engine/ecs/RelWithDebInfo/Ecs_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>

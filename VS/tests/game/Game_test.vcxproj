@@ -115,11 +115,9 @@
       <AdditionalDependencies>..\..\game\Debug\Game.lib;..\googletest-1.7.0\Debug\gtest_main.lib;..\..\engine\Debug\Engine.lib;..\..\engine\view\Debug\View.lib;..\..\engine\model\Debug\Model.lib;..\..\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;..\..\engine\controller\Debug\Controller.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;..\googletest-1.7.0\Debug\gtest.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/game/Debug/Game_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/game/Debug/Game_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -159,9 +157,7 @@
       <AdditionalDependencies>..\..\game\Release\Game.lib;..\googletest-1.7.0\Release\gtest_main.lib;..\..\engine\Release\Engine.lib;..\..\engine\view\Release\View.lib;..\..\engine\model\Release\Model.lib;..\..\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;..\..\engine\controller\Release\Controller.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;..\googletest-1.7.0\Release\gtest.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/game/Release/Game_test.lib</ImportLibrary>
       <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/game/Release/Game_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -203,10 +199,7 @@
       <AdditionalDependencies>..\..\game\MinSizeRel\Game.lib;..\googletest-1.7.0\MinSizeRel\gtest_main.lib;..\..\engine\MinSizeRel\Engine.lib;..\..\engine\view\MinSizeRel\View.lib;..\..\engine\model\MinSizeRel\Model.lib;..\..\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;..\..\engine\controller\MinSizeRel\Controller.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;..\googletest-1.7.0\MinSizeRel\gtest.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/game/MinSizeRel/Game_test.lib</ImportLibrary>
-      <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/game/MinSizeRel/Game_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -246,9 +239,7 @@
       <AdditionalDependencies>..\..\game\RelWithDebInfo\Game.lib;..\googletest-1.7.0\RelWithDebInfo\gtest_main.lib;..\..\engine\RelWithDebInfo\Engine.lib;..\..\engine\view\RelWithDebInfo\View.lib;..\..\engine\model\RelWithDebInfo\Model.lib;..\..\..\third_party\SDL2\VC\SDL2_ttf-2.0.15\lib\x86\SDL2_ttf.lib;..\..\engine\controller\RelWithDebInfo\Controller.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2main.lib;..\..\..\third_party\SDL2\VC\SDL2-2.0.12\lib\x86\SDL2.lib;..\googletest-1.7.0\RelWithDebInfo\gtest.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>Q:/workspace/cpp/Spacewar/VS/tests/game/RelWithDebInfo/Game_test.lib</ImportLibrary>
       <ProgramDataBaseFile>Q:/workspace/cpp/Spacewar/VS/tests/game/RelWithDebInfo/Game_test.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
